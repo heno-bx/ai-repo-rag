@@ -13,7 +13,7 @@ binding = "AI"
 [[d1_databases]]
 binding = "DB"
 database_name = "recipe-store"
-database_id = "1f8cad45-bd08-4d1b-ae78-d124e4e2df7f"
+database_id = "b2109422-c687-4ee4-989a-cf429b34733b"
 
 [[vectorize]]
 binding = "VECTOR_INDEX"
