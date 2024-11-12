@@ -2,7 +2,7 @@ name = "misty-term-0063"
 main = "src/index.js"
 compatibility_date = "2023-10-25"
 
-route = { pattern = "cocktail-rag.beefie.xyz", custom_domain = true }
+route = { pattern = "misty-term-0063.henoch-hernanda.workers.dev", custom_domain = true }
 
 [site]
 bucket = "./public"
