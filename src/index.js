@@ -20,13 +20,13 @@ export default {
 					//return handleAddDocument(request, env);
 				}
 				break;
-			case "api":
-				if (action === "chat" && request.method === "GET") {
-					// GET /api/chat?query=What drinks can I make with vodka.
+			// case "api":
+			// 	if (action === "chat" && request.method === "GET") {
+			// 		// GET /api/chat?query=What drinks can I make with vodka.
 
-					return handleChatQuery(url, env);
-				}
-				break;
+			// 		return handleChatQuery(url, env);
+			// 	}
+			// 	break;
 			default:
 				return handlePublic(request, env, ctx);
 		}
