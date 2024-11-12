@@ -41,7 +41,7 @@ async function searchEmbeddings(query, env) {
         return [];
         
     } catch (error) {
-        console.error("An error occurred:", error);
+        console.error("An error occurred: ", error);
         return [];
     }
 }
