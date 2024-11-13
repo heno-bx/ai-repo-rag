@@ -9,6 +9,8 @@ const assetManifest = JSON.parse(manifestJSON);
 // Router
 export default {
 	async fetch(request, env, ctx) {
+		console.log("masuk fetch");
+		
 		const url = new URL(request.url);
 		const [, rootPath, action] = url.pathname.split('/');
 		console.log(rootPath);

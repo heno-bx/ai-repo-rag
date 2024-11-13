@@ -190,7 +190,7 @@
 				answerContainer.textContent = '';
 
 				console.log("masuk index");
-				handleChatQuery(`/api/chat?query=${encodeURIComponent(query)}`);
+				fetch(`/api/chat?query=${encodeURIComponent(query)}`);
 				
 
 				// const apiUrl = `/api/chat?query=${encodeURIComponent(query)}`;
