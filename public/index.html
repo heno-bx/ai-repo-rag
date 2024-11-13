@@ -147,6 +147,7 @@
 				}
 			}
 		</style>
+		<script src="../src/index.js"></script>
 	</head>
 	<body>
 		<div id="chat-container">
@@ -188,22 +189,24 @@
 				answerContainer.style.opacity = 0;
 				answerContainer.textContent = '';
 
-				const apiUrl = `/api/chat?query=${encodeURIComponent(query)}`;
-				fetch(apiUrl)
-					.then((response) => response.json())
-					.then((data) => {
-						setTimeout(() => {
-							loaderWrapper.classList.remove('show');
-							displayResponse(data);
-							answerContainer.style.opacity = 1;
-						}, 500);
-					})
-					.catch((error) => {
-						console.error('Error:', error);
-						loaderWrapper.classList.remove('show');
-						displayResponse({ error: 'Sorry, something went wrong.' });
-						answerContainer.style.opacity = 1;
-					});
+				handleChatQuery(`/api/chat?query=${encodeURIComponent(query)}`);
+
+				// const apiUrl = `/api/chat?query=${encodeURIComponent(query)}`;
+				// fetch(apiUrl)
+				// 	.then((response) => response.json())
+				// 	.then((data) => {
+				// 		setTimeout(() => {
+				// 			loaderWrapper.classList.remove('show');
+				// 			displayResponse(data);
+				// 			answerContainer.style.opacity = 1;
+				// 		}, 500);
+				// 	})
+				// 	.catch((error) => {
+				// 		console.error('Error:', error);
+				// 		loaderWrapper.classList.remove('show');
+				// 		displayResponse({ error: 'Sorry, something went wrong.' });
+				// 		answerContainer.style.opacity = 1;
+				// 	});
 			}
 
 			// Function to display the response
