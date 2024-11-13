@@ -189,27 +189,25 @@
 
 				answerContainer.style.opacity = 0;
 				answerContainer.textContent = '';
-
-				console.log("masuk index", handleChatQuery);
-				handleChatQuery(`/api/chat?query=${encodeURIComponent(query)}`, null);
 				
+				console.log("masuk index");
 
-				// const apiUrl = `/api/chat?query=${encodeURIComponent(query)}`;
-				// fetch(apiUrl)
-				// 	.then((response) => response.json())
-				// 	.then((data) => {
-				// 		setTimeout(() => {
-				// 			loaderWrapper.classList.remove('show');
-				// 			displayResponse(data);
-				// 			answerContainer.style.opacity = 1;
-				// 		}, 500);
-				// 	})
-				// 	.catch((error) => {
-				// 		console.error('Error:', error);
-				// 		loaderWrapper.classList.remove('show');
-				// 		displayResponse({ error: 'Sorry, something went wrong.' });
-				// 		answerContainer.style.opacity = 1;
-				// 	});
+				const apiUrl = `/api/chat?query=${encodeURIComponent(query)}`;
+				fetch(apiUrl)
+					.then((response) => response.json())
+					.then((data) => {
+						setTimeout(() => {
+							loaderWrapper.classList.remove('show');
+							displayResponse(data);
+							answerContainer.style.opacity = 1;
+						}, 500);
+					})
+					.catch((error) => {
+						console.error('Error:', error);
+						loaderWrapper.classList.remove('show');
+						displayResponse({ error: 'Sorry, something went wrong.' });
+						answerContainer.style.opacity = 1;
+					});
 			}
 
 			// Function to display the response

@@ -68,8 +68,9 @@ export async function generateResponse(query, env) {
     console.log(systemPrompt)
     console.log(contextMessage)
 
-    return await ai.run(
-        '@cf/meta/llama-2-7b-chat-int8',
+    return await env.AI.run(
+        // '@cf/meta/llama-2-7b-chat-int8',
+        '@cf/meta/llama-3-8b-instruct',
         {
             messages: [
                 { role: 'system', content: systemPrompt },
