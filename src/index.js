@@ -46,6 +46,7 @@ async function handleAddDocument(request, env) {
 }
 
 async function handleChatQuery(url, env) {
+	console.log("masuk handlequery");
 	const query = url.searchParams.get("query");
 	const response = await generateResponse(query, env);
 	return new Response(JSON.stringify(response), {
