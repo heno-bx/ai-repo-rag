@@ -2,7 +2,7 @@
 // index.js
 //
 import { getAssetFromKV, NotFoundError, MethodNotAllowedError } from '@cloudflare/kv-asset-handler'
-// import { processDocument, generateResponse } from './ai';
+import { processDocument, generateResponse } from './ai';
 import manifestJSON from '__STATIC_CONTENT_MANIFEST';
 const assetManifest = JSON.parse(manifestJSON);
 
@@ -17,16 +17,16 @@ export default {
 				if (action === "add" && request.method === "POST") {
 					// POST /doc/add
 					return new Response("I have disabled adding documents for this demo.", { status: 400 })
-					//return handleAddDocument(request, env);
+					// return handleAddDocument(request, env);
 				}
 				break;
-			// case "api":
-			// 	if (action === "chat" && request.method === "GET") {
-			// 		// GET /api/chat?query=What drinks can I make with vodka.
+			case "api":
+				if (action === "chat" && request.method === "GET") {
+					// GET /api/chat?query=What drinks can I make with vodka.
 
-			// 		return handleChatQuery(url, env);
-			// 	}
-			// 	break;
+					return handleChatQuery(url, env);
+				}
+				break;
 			default:
 				return handlePublic(request, env, ctx);
 		}
